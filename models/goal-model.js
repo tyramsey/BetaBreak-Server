@@ -1,9 +1,6 @@
 module.exports = (sequelize, DataTypes) => {
     const Goal = sequelize.define("goal", {
-        vcount: {
-          type: DataTypes.INTEGER,
-          allowNull: true,
-        },
+       
       pitchcount: {
         type: DataTypes.INTEGER,
         allowNull: true,
@@ -24,27 +21,12 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.INTEGER,
         allowNull: true,
       },
-      bouldermaxdiff: {
-        type: DataTypes.INTEGER,
-        allowNull: true,
-      },
+      
       daysclimbed: {
         type: DataTypes.INTEGER,
         allowNull: true,
       },
       duration: {
-        type: DataTypes.INTEGER,
-        allowNull: true,
-      },
-      tradduration: {
-        type: DataTypes.INTEGER,
-        allowNull: true,
-      },
-      sportduration: {
-        type: DataTypes.INTEGER,
-        allowNull: true,
-      },
-      boulderduration: {
         type: DataTypes.INTEGER,
         allowNull: true,
       },

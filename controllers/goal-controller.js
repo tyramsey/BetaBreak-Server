@@ -8,18 +8,13 @@ router.post('/creategoal', validateSession, (req, res) => {
  
     
     const createGoal = {
-      vcount: req.body.goal.vcount,
       pitchcount: req.body.goal.pitchcount,
       tradpitches: req.body.goal.tradpitches,
       sportpitches: req.body.goal.sportpitches,
       tradmaxdiff: req.body.goal.tradmaxdiff,
       sportmaxdiff: req.body.goal.sportmaxdiff,
-      bouldermaxdiff: req.body.goal.bouldermaxdiff,
       daysclimbed: req.body.goal.daysclimbed,
       duration: req.body.goal.duration,
-      tradduration: req.body.goal.tradduration,
-      sportduration: req.body.goal.sportduration,
-      boulderduration: req.body.goal.boulderduration,
       owner_id: req.user.id,
       secret: req.body.goal.secret
   
@@ -43,19 +38,14 @@ router.get("/getgoal", validateSession, (req, res) => {
 
 router.put('/updategoal/:id', validateSession, function(req, res) {
   const updateGoal = {
-    vcount: req.body.goal.vcount,
-      pitchcount: req.body.goal.pitchcount,
-      tradpitches: req.body.goal.tradpitches,
-      sportpitches: req.body.goal.sportpitches,
-      tradmaxdiff: req.body.goal.tradmaxdiff,
-      sportmaxdiff: req.body.goal.sportmaxdiff,
-      bouldermaxdiff: req.body.goal.bouldermaxdiff,
-      daysclimbed: req.body.goal.daysclimbed,
-      duration: req.body.goal.duration,
-      tradduration: req.body.goal.tradduration,
-      sportduration: req.body.goal.sportduration,
-      boulderduration: req.body.goal.boulderduration,
-      secret: req.body.goal.secret
+    pitchcount: req.body.goal.pitchcount,
+    tradpitches: req.body.goal.tradpitches,
+    sportpitches: req.body.goal.sportpitches,
+    tradmaxdiff: req.body.goal.tradmaxdiff,
+    sportmaxdiff: req.body.goal.sportmaxdiff,
+    daysclimbed: req.body.goal.daysclimbed,
+    duration: req.body.goal.duration,
+    secret: req.body.goal.secret
   };
   const query = { where: {id: req.params.id}};
 

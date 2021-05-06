@@ -11,9 +11,8 @@ router.get('/trial', function(req, res){
 router.post("/register", function (req, res) {
     User.create({
       username: req.body.user.username,
+      email: req.body.user.email, 
       password: bcrypt.hashSync(req.body.user.password, 5),
-      first_name: req.body.user.first_name,
-      last_name: req.body.user.last_name
 
     })
       .then(function createSuccess(user) {
