@@ -24,6 +24,6 @@ app.use('/goal', goal)
 
 sequelize.sync();
 // sequelize.sync({force: true})
-app.listen(3000, function () {
-    console.log('Beta Break on port 3000')
+app.listen(process.env.PORT, () => {
+    console.log(`Beta Break on port ${process.env.PORT}`)
 })
