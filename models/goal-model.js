@@ -14,11 +14,11 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
       tradmaxdiff: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         allowNull: true,
       },
       sportmaxdiff: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         allowNull: true,
       },
       

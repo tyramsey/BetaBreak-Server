@@ -2,9 +2,10 @@ const router = require('express').Router();
 const Goal = require('../db').import('../models/goal-model');
 
 let validateSession = require('../middleware/validate-session');
+let validateAdmin = require('../middleware/validate-admin');
 
 
-router.post('/creategoal', validateSession, (req, res) => {
+router.post('/creategoal', validateSession, validateAdmin, (req, res) => {
  
     
     const createGoal = {
@@ -28,10 +29,10 @@ router.post('/creategoal', validateSession, (req, res) => {
 
 
 router.get("/getgoal", validateSession, (req, res) => {
-  let owner_id = req.user.id
-  Goal.findAll({
-    where: {owner_id: owner_id}
-})
+  // let owner_id = req.user.id
+  Goal.findAll(
+    // where: {owner_id: owner_id}
+)
   .then(goals => res.status(200).json(goals))
   .catch(err => res.status(500).json({error: err}))
 });

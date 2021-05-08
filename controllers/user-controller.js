@@ -13,6 +13,7 @@ router.post("/register", function (req, res) {
       username: req.body.user.username,
       email: req.body.user.email, 
       password: bcrypt.hashSync(req.body.user.password, 5),
+      role: req.body.user.role
 
     })
       .then(function createSuccess(user) {
@@ -24,6 +25,7 @@ router.post("/register", function (req, res) {
           user: user,
           message: "User successfully created!",
           sessionToken: token,
+          role: user.role
         });
       })
       .catch((err) => res.status(500).json({ error: err }));
@@ -50,6 +52,7 @@ router.post("/register", function (req, res) {
                 user: user,
                 message: "User successfully logged in!",
                 sessionToken: token,
+                role: user.role
               });
             } else {
               res.status(502).send({ error: "Login Failed" });
