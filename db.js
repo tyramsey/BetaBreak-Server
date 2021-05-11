@@ -4,12 +4,12 @@ const sequelize = new Sequelize(process.env.DATABASE_URL, {
 
     //comment below code out for local nodemon uncomment for heroku deployment
 
-    // dialectOptions: {
-    //     ssl: {
-    //         require: true,
-    //         rejectUnauthorized: false, // very important
-    //       }
-    //   }
+    dialectOptions: {
+        ssl: {
+            require: true,
+            rejectUnauthorized: false, // very important
+          }
+      }
 }
 );
 
