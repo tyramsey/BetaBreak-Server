@@ -1,12 +1,15 @@
 const Sequelize = require('sequelize');
 const sequelize = new Sequelize(process.env.DATABASE_URL, {
     dialect: "postgres", 
-    dialectOptions: {
-        ssl: {
-            require: true,
-            rejectUnauthorized: false, // very important
-          }
-      }
+
+    //comment below code out for local nodemon uncomment for heroku deployment
+
+    // dialectOptions: {
+    //     ssl: {
+    //         require: true,
+    //         rejectUnauthorized: false, // very important
+    //       }
+    //   }
 }
 );
 

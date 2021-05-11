@@ -6,7 +6,7 @@ let sequelize = require('./db');
 
 let user = require('./controllers/user-controller');
 let outdoor = require('./controllers/outdoor-controller');
-let indoor = require('./controllers/indoor-controller');
+let userinfo = require('./controllers/userinfo-controller');
 let goal = require('./controllers/goal-controller');
 
 // app.use('/test', function(req, res){
@@ -19,7 +19,7 @@ app.use(express.json());
 
 app.use('/user', user)
 app.use('/outdoor', outdoor)
-app.use('/indoor', indoor)
+app.use('/userinfo', userinfo)
 app.use('/goal', goal)
 
 sequelize.sync();
